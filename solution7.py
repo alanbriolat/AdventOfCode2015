@@ -4,7 +4,7 @@ import collections
 from util import Timer
 
 
-Connection = collections.namedtuple('Connection', 'sink dummy right op left')
+Connection = collections.namedtuple('Connection', ['sink', 'dummy', 'right', 'op', 'left'])
 Connection.__new__.__defaults__ = (None, None)  # Make last 2 arguments optional
 
 

@@ -1,5 +1,6 @@
 import time
 import collections
+from itertools import tee, izip
 
 
 class Timer(object):
@@ -13,6 +14,13 @@ class Timer(object):
 
     def __str__(self):
         return '(took %.03f seconds)' % self.interval
+    
+    
+def pairwise(iterable):
+    "s -> (s0,s1), (s1,s2), (s2, s3), ..."
+    a, b = tee(iterable)
+    next(b, None)
+    return izip(a, b)
 
 
 def identity(x):

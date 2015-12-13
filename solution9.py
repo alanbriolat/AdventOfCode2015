@@ -1,16 +1,9 @@
 from __future__ import print_function
-from itertools import tee, izip, permutations
+from itertools import permutations
 from collections import defaultdict
 import re
 
-from util import Timer
-
-
-def pairwise(iterable):
-    "s -> (s0,s1), (s1,s2), (s2, s3), ..."
-    a, b = tee(iterable)
-    next(b, None)
-    return izip(a, b)
+from util import Timer, pairwise
 
 
 dist = defaultdict(dict)
